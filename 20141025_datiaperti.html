@@ -1,0 +1,403 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Open Data: informazioni accessibili a tutti</title>
+
+		<meta name="description" content="Open Data e riuso dell'informazione">
+		<meta name="author" content="Stefano Sabatini">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="reveal/css/reveal.min.css">
+		<link rel="stylesheet" href="reveal/css/theme/solarized.css" id="theme">
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="reveal/lib/css/zenburn.css">
+
+		<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+		<script>
+			if( window.location.search.match( /print-pdf/gi ) ) {
+				var link = document.createElement( 'link' );
+				link.rel = 'stylesheet';
+				link.type = 'text/css';
+				link.href = 'reveal/css/print/pdf.css';
+				document.getElementsByTagName( 'head' )[0].appendChild( link );
+			}
+		</script>
+		<!--[if lt IE 9]>
+		<script src="reveal/lib/js/html5shiv.js"></script>
+		<![endif]-->
+		<style>
+		.reveal img.inline{margin: 0 5px; border:0;}
+		</style>
+	</head>
+	<body>
+		<div class="reveal">
+
+			<div class="slides">
+				<section>
+					<h1>Open Data: informazioni accessibili a tutti</h1>
+					<h2>Una introduzione ai dati aperti</h2>
+					<p>
+						<small><a href="http://stefanosabatini.eu">Stefano Sabatini</a></small>
+					</p>
+				</section>
+
+				<section>
+					<h2>Cosa vuol dire aperto?</h2>
+					<blockquote cite="http://opendefinition.org/">
+						&ldquo;Knowledge is open if anyone is free to access, use, modify, and share it — subject, at most, to measures that preserve provenance and openness.&rdquo;
+					</blockquote>
+
+					<p>La conoscenza è aperta se ognuno è libero di</p>
+					<p><b>accedervi, usarla, modificarla, ​condividerla</b></p>
+					<p>con al massimo limitazioni che conservano</p>
+					<p><b>provenienza e ​apertura</b></p>
+					<p>(Open Definition 2.0)</p>
+				</section>
+
+				<section>
+					<h2>Cronologia minima</h2>
+				<ul>
+					<li>1986: <a href="https://www.gnu.org/philosophy/free-sw.it.html">libertà del software</a> (FSF)</li>
+					<li>1997: <a href="https://www.debian.org/social_contract">Debian Social Contract</a> e Free Software Guidelines</li>
+					<li>1998: <a href="http://opensource.org/osd">Open Source definition</a></li>
+					<li>2002: Creative Commons 1.0</li>
+					<li>2005: <a href="http://opendefinition.org/">Open (Knowledge) Definition</a></li>
+					<li>2013: Creative Commons 4.0</li>
+				</ul>
+				</section>
+
+				<section>
+					<h2>Creative Commons</h2>
+					<h3>Diritti riservabili</h3>
+				<ul>
+					<li>Attribuzione (BY)</li>
+					<li>Condivisione allo stesso modo (SA)</li>
+					<li>(Uso) non commerciale (NC)</a></li>
+					<li>Nessuna opera derivata (ND)</li>
+				</ul>
+				</section>
+
+				<section>
+					<h2>Creative Commons</h2>
+					<h3>Combinazioni "aperte"</h3>
+				<ul>
+					<li>CC-BY</li>
+					<li>CC-BY-SA</li>
+				</ul>
+				<p><b>Il resto non rispetta la definizione!</b></p>
+				</section>
+
+				<section>
+					<h2>Creative Commons</h2>
+					<h3>CC0</h3>
+				<ul>
+					<li>Non è una licenza (è una ‘dedica’ al pubblico dominio)</li>
+					<li>Definizione unica per tutte le legislazioni</li>
+					<li>Uniformità del concetto di "pubblico dominio"</a></li>
+				</ul>
+				</section>
+
+				<section>
+					<h2>Altre licenze libere</h2>
+					<h3>ODbL</h3>
+					<ul>
+						<li>Nata per OpenStreetMap</li>
+						<li>Focalizzata sulle basi di dati</li>
+						<li>Conforme al diritto 'sui generis' europeo</a></li>
+						<li>ODbL ~ CC-BY-SA 4.0</a></li>
+					</ul>
+				</section>
+				
+				<section>
+					<h2>Perchè sono importanti?</h2>
+				<ul>
+					<li>Per la scienza (Open Science)</li>
+					<li>Per la trasparenza governativa (OGD)</li>
+					<li>Per l'economia (business)</a></li>
+				</ul>
+				</section>
+
+				<section>
+					<h2>Open Science</h2>
+					<a class="image" href="http://commons.wikimedia.org/wiki/File:Open_Science_-_Prinzipien.png" target="_blank">
+						<img height="300" src="images/Open_Science_-_Prinzipien.png" alt="">
+					</a>
+					<p>La scienza si fa sui dati ed i risultati sperimentali devono esser di pubblico dominio</p>
+					<blockquote cite="http://opendefinition.org/">
+						&ldquo;Se ho visto più lontano, è perché stavo sulle spalle di giganti&rdquo; (Newton, da Bernardo di Chartres)
+					</blockquote>
+				</section>
+
+				<section>
+					<h2>Open Government Data</h2>
+				<ul>
+					<li>Dati prodotti o commissionati dalla PA</li>
+					<li>Pubblicare tutto al netto della privacy</li>
+					<li>Trasparenza, democrazia ed efficacia governativa</li>
+					<li>Ma anche: partecipazione civica ed innovazione</li>
+				</ul>
+				</section>
+
+				<section>
+					<h2>Business con i dati aperti</h2>
+					<a class="image" href="http://www.opendata500.com/" target="_blank">
+						<img height="300" src="images/opendata500.png" alt="">
+					</a>
+				<ul>
+					<li>Riuso commerciale crea occasioni per aziende e startup</li>
+					<li>Che valore dare ai dati?</li>
+					<li>Teoria del "network effect"</a></li>
+					<li>Alcuni esempi: <a href="https://www.mapbox.com/">MapBox</a>, <a href="http://www.propublica.org/">ProPublica</a>, <a href="http://openplans.org/">OpenPlans</a>, <a href="https://www.uber.com/">Uber</a></li>
+				</ul>
+				</section>
+
+				<section>
+					<h2>Valutazione dei dati: 5 star data</h2>
+				<p>Una proposta di Tim Berners-Lee per i linked data</p>
+				<ul>
+					<li><img src="images/data-badge-1.png" class="inline"/> Licenza libera</li>
+					<li><img src="images/data-badge-2.png" class="inline"/> Machine-readable, formato proprietario</li>
+					<li><img src="images/data-badge-3.png" class="inline"/> Machine-readable, formato aperto</li>
+					<li><img src="images/data-badge-4.png" class="inline"/> Risorse come link (RDF)</li>
+					<li><img src="images/data-badge-5.png" class="inline"/> Dati nel web semantico</li>
+				</ul>
+				</section>
+
+				<section>
+					<h2>Due parole sui formati</h2>
+				<p>In che formato pubblico i dati?</p>
+				<ul>
+					<li>PDF: Malissimo!</li>
+					<li>DOC(X)/XLS(X): Male!</li>
+					<li>ODT/ODS: Bene!</li>
+					<li>CSV/TSV: Ottimo!</li>
+					<li>JSON/XML: Mitico!</li>
+					<li>RDF: Grande!*</li>
+				</ul>
+				<p style="font-style:italic"><small>* Son gusti...</small></p>
+				</section>
+
+				<section>
+					<h2>Open Data Engagement</h2>
+				<p>Per le iniziative di rilascio, basandosi sullo schema di TBL.</p>
+				<ul>
+					<li>&#9734; Rispondere alle richieste di dati</li>
+					<li>&#9734;&#9734; Informazioni e manuali sui dati rilasciati</li>
+					<li>&#9734;&#9734;&#9734; Supportare conversazioni sui dataset</li>
+					<li>&#9734;&#9734;&#9734;&#9734; Fornire tool, guide e organizzare sessioni sull'uso</li>
+					<li>&#9734;&#9734;&#9734;&#9734;&#9734; Cicli di feedback e connessioni con altri dati</a></li>
+				</ul>
+				</section>
+
+				<section>
+					<h2>Legislazione italiana</h2>
+					<p>Il Decreto Crescita 2.0 riforma il Codice dell'Amministrazione digitale.</p>
+				<ul>
+					<li>Definisce cosa sono i formati aperti ed i dati aperti</li>
+					<li>I documenti della PA sono Open by default, se non indicato</li>
+					<li>Rapporto Annuale (AgID): non ancora uscito</li>
+					<li>Agenda per la valorizzazione del patrimonio informativo pubblico (AgID)</li>
+					<li>Linee Guida per la valorizzazione del patrimonio informativo pubblico (AgID)</a></li>
+				</ul>
+				</section>
+				
+				<section>
+					<h2>Legislazione italiana</h2>
+					<p style="text-align:left">Agenda:</p>
+				<ul>
+					<li>Obiettivi da perseguire e principi</li>
+					<li>Basi dati di interesse nazionale (G8 Open Data Charter)</li>
+				</ul>
+					<p style="text-align:left">Linee guida:</p>
+				<ul>
+					<li>Specifiche tecniche (metadati, ontologie, capitolati)</li>
+					<li>Procedure di rilascio, valore e licenze</li>
+				</ul>
+				</section>
+
+				<section>
+					<h2>Open Data Charter</h2>
+					<p>Quali sono i dati <i>succosi</i>?</p>
+				<ul>
+					<li>Registro imprese</li>
+					<li>Statistiche su crimini e giustizia</li>
+					<li>Sensori climatici e dati sul settore primario</li>
+					<li>Scuole e performance, competenze digitali</li>
+					<li>Livelli di inquinamento e consumo energetico</li>
+					<li>Bilanci e spesa pubblica</li>
+					<li>Dati geospaziali</li>
+					<li>Dati sullo sviluppo globale</li>
+					<li>Trasparenza governativa, legislazione e spese</li>
+					<li>Dati sulla salute (prescrizioni, performance)</li>
+				</ul>
+				</section>
+
+				<section>
+					<h1>ESEMPI</h1>
+				</section>
+
+				<section>
+					<h2>Open Data a Matera</h2>
+					<a class="image" href="http://www.matera-basilicata2019.it/it/" target="_blank">
+						<img height="300" src="images/matera.jpg" alt="">
+					</a>
+				<ul>
+					<li>Partiti da linee guida di Palermo</li>
+					<li>Coinvolgimento di realtà locali (community <a href="http://www.matera-basilicata2019.it/it/" target="_blank">Matera2019</a>) e nazionali</li>
+					<li>Pubblicazione di open data è workflow della PA</li>
+					<li>Anche grazie a questo, Matera capitale europea della cultura</li>
+				</ul>
+				</section>
+
+				<section>
+					<h2>Open Data a Bari</h2>
+					<a class="image" href="" target="_blank">
+						<img height="300" src="images/amtab.png" alt="">
+					</a>
+				<ul>
+					<li>Progetto infomobilità (SEMINA)</li>
+					<li>Rilascio dati AMTAB <a href="http://bari.opendata.planetek.it/OrariBus/v2.1/">tramite API</a></li>
+					<li>Progetti futuri: dati realtime</li>
+					<li>Organizzazione hackathon (#mhoo14, 8 Novembre)</a></li>
+				</ul>
+				</section>
+
+				<section>
+					<h2>Open Data in Liguria</h2>
+					<a class="image" href="http://www.regione.liguria.it/opendata.html" target="_blank">
+						<img height="300" src="images/datiliguria.png" alt="">
+					</a>
+				<ul>
+					<li>Portale open data <a href="http://www.regione.liguria.it/opendata.html">dati.liguria.it</a></li>
+					<li>Molti geodati! (via trasformazione obbligatoria)</li>
+					<li>Licenza CC-BY</a></li>
+					<li>MA: non unico punto di download</a></li>
+					<li>MA: formati non chiari</a></li>
+					<li>MA: niente API (sensori vari)</a></li>
+				</ul>
+				</section>
+
+				<section>
+					<h2>Riuso: Scraping</h2>
+					<a class="image" href="" target="_blank">
+						<img height="300" src="images/tabula.png" alt="">
+					</a>
+				<ul>
+					<li>PDF: per estrarre informazione, <a href="">Tabula</a></li>
+					<li>Form di interrogazione: il pc 'finge' di essere un utente (curl)</li>
+				</ul>
+				<p style="text-align:left">Problemi:</p>
+				<ul>
+				<li>Soluzione 'estrema'</li>
+				<li>Talvolta non legale</li>
+				<li>Mostra l'energia potenziale di un dato, ma è un tappullo</li>
+				</ul>
+				</section>
+
+				<section>
+					<h2>Riuso: Scraping dell'Osservatorio Carburanti</h2>
+					<a class="image" href="http://toolserver.openstreetmap.it/carburantiMiSE/" target="_blank">
+						<img height="300" src="images/trovaprezzi.png" alt="">
+					</a>
+				<ul>
+					<li>Osservatorio del Ministero: tutti i prezzi italiani</li>
+					<li>Comunicazione <b>obbligatoria</b> per legge</li>
+					<li>Ma non (ancora?) open data</li>
+					<li>Scraping automatico e servizi su <a href="http://toolserver.openstreetmap.it/carburantiMiSE/">CarburantiMiSE</a></li>
+				</ul>
+				</section>
+
+				<section>
+					<h2>Riuso: Scraping dell'Osservatorio Carburanti</h2>
+					<a class="image" href="http://toolserver.openstreetmap.it/carburantiMiSE/" target="_blank">
+						<img height="300" src="images/trovaprezzi_cheap.png" alt="">
+					</a>
+				<ul>
+					<li>Osservatorio del Ministero: tutti i prezzi italiani</li>
+					<li>Comunicazione <b>obbligatoria</b> per legge</li>
+					<li>Ma non (ancora?) open data</li>
+					<li>Scraping automatico e servizi su <a href="http://toolserver.openstreetmap.it/carburantiMiSE/">CarburantiMiSE</a></li>
+				</ul>
+				</section>
+
+				<section>
+					<h2>Riuso: Import su OpenStreetMap</h2>
+					<a class="image" href="https://www.openstreetmap.org/#map=17/44.40647/8.93106" target="_blank">
+						<img height="300" src="images/edificato.png" alt="">
+					</a>
+				<ul>
+					<li>Edificato da CTR su portale Open Data Liguria</li>
+					<li>Conversione in formato OSM</li>
+					<li>Upload manuale con gestione conflitti</li>
+					<li>Restano da finire alcune zone di Genova</li>
+				</ul>
+				</section>
+
+				<section>
+					<h2>Riuso: Rischio alluvionale</h2>
+					<a class="image" href="http://opengenova.org/maps/rischioalluvionale/" target="_blank">
+						<img height="300" src="images/rischioedifici_zoom.jpg" alt="">
+					</a>
+				<ul>
+					<li>Data journalism <i>senza pretese</i> (<a href="http://www.opengenova.org/emergenza2014/utilita-degli-open-data-a-genova/">articolo</a>)</li>
+					<li>Analisi GIS di due dataset open data</li>
+					<li>Visualizzazione aree ed edifici a rischio</li>
+					<li>Risultati: 4044 edifici a richio (83.11% residenziali)</li>
+				</ul>
+				</section>
+
+				<section>
+					<h1>GRAZIE!</h1>
+					<h3>Alcuni link</h3>
+				<ul>
+					<li><a href="http://gbonanome.github.io/opendatabingo/">Open Data Bingo (FAQ su preoccupazioni)</a></li>
+					<li><a href="http://sabas.gitbooks.io/datiapertibook/">Open Data e riuso (ebook)</a></li>
+				</ul>
+				<br/>
+				<h4 style="margin-top:15px;">Altre slides</h4>
+				<ul>
+					<li><a href="http://www.slideshare.net/LucaCorsato/opendata-dati-pubblici-tra-amministrazione-e-ingaggio">Dati pubblici tra amministrazione ed ingaggio</a></li>
+					<li><a href="http://www.slideshare.net/ProgettoRENA/open-data-beni-comuni-digitali">Open Data: Beni comuni digitali</a></li>
+					<li><a href="http://www.slideshare.net/piersoft/open-datamatera-osmit2014">Open Data Matera</a></li>
+					<li><a href="http://www.slideshare.net/napo/napolitano-opendata-tsm">Open Data e Civic hacking</a></li>
+				</ul>
+				</section>
+
+				<section>
+					<h1>Attributions</h1>
+				<ul>
+					<li>Slide 8: <a href="http://commons.wikimedia.org/wiki/File:Open_Science_-_Prinzipien.png">Open Science Prinzipien</a> (Andreas E. Neuhold)</li>
+					<li>Slide 18: <a href="https://www.flickr.com/photos/127068989@N08/15303676457/">Matera - Sasso Barisano</a> (own work)</li>
+				</ul>
+				</section>
+			</div>
+		</div>
+
+		<script src="reveal/lib/js/head.min.js"></script>
+		<script src="reveal/js/reveal.min.js"></script>
+
+		<script>
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+				
+				transition: 'linear', // default/cube/page/concave/zoom/linear/fade/none
+
+				dependencies: [
+					{ src: 'reveal/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'reveal/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'reveal/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'reveal/plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+		</script>
+	</body>
+</html>
