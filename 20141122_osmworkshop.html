@@ -1,0 +1,306 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>OpenStreetMap Workshop</title>
+
+		<meta name="description" content="OpenStreetMap Workshop">
+		<meta name="author" content="Stefano Sabatini">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="reveal/css/reveal.min.css">
+		<link rel="stylesheet" href="reveal/css/theme/solarized.css" id="theme">
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="reveal/lib/css/zenburn.css">
+
+		<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+		<script>
+			if( window.location.search.match( /print-pdf/gi ) ) {
+				var link = document.createElement( 'link' );
+				link.rel = 'stylesheet';
+				link.type = 'text/css';
+				link.href = 'reveal/css/print/pdf.css';
+				document.getElementsByTagName( 'head' )[0].appendChild( link );
+			}
+		</script>
+		<!--[if lt IE 9]>
+		<script src="reveal/lib/js/html5shiv.js"></script>
+		<![endif]-->
+		<style>
+		.reveal img.inline{margin: 0 5px; border:0;}
+		.reveal .b{font-weight:bold;}
+		code{color:#B30000;}
+		.left{text-align:left;}
+		</style>
+	</head>
+	<body>
+		<div class="reveal">
+
+			<div class="slides">
+				<section>
+					<h1>OpenStreetMap Workshop</h1>
+					<p>
+						<small>Stefano Sabatini / Fabrizio Tambussa</small>
+					</p>
+				</section>
+
+				<section>
+					<h2>OSM data model: elementi</h2>
+					<p>I dati sono composti da:</p>
+					<ul>
+					<li><img src="images/osm_element_node.png" class="inline"/> node</li>
+					<li><img src="images/osm_element_way.png" class="inline"/> way</li>
+					<li><img src="images/osm_element_relation.png" class="inline"/> relation</li>
+					</ul>
+					<p>Le way hanno altri significati:</p>
+					<ul>
+					<li><img src="images/osm_element_closedway.png" class="inline"/> closed way</li>
+					<li><img src="images/osm_element_area.png" class="inline"/> area</li>
+					</ul>
+				</section>
+				<section>
+					<img src="images/osm_element_tag.png" class="inline" style="float:right;"/> 
+					<h2>OSM data model: tag</h2>
+					<p>Ogni oggetto possiede uno o più tag che ne descrivono le proprietà.</p>
+					<p>Ad esempio un'area identifica un parcheggio se ha il tag</p>
+					<p class="b">amenity=parking</p>
+					<p>Dove trovo i tag?</p>
+					<ul>
+					<li><a href="https://wiki.openstreetmap.org" target="_blank">wiki.openstreetmap.org</a></li>
+					<li><a href="https://taginfo.openstreetmap.org/" target="_blank">taginfo.openstreetmap.org</a></li>
+					</ul>
+					<p>Non c'è? Chiedi ad altri o inventa!</p>
+				</section>
+
+				<section>
+					<h2>Prelevare i dati</h2>
+				<ul>
+					<li>Overpass turbo</li>
+					<li>Estratti nazionali</li>
+					<li>Estratti locali</li>
+				</ul>
+				</section>
+
+				<section>
+					<h2>Overpass Turbo: interfaccia</h2>
+					<a class="image" href="" target="_blank">
+						<img src="images/osm_overpassturbo_interface.png" style="width: 100%;" alt="">
+					</a>
+				</section>
+
+				<section>
+					<h2>Overpass Turbo: wizard</h2>
+					<a class="image" href="" target="_blank">
+						<img src="images/osm_overpassturbo_wizard.png" style="width: 100%;" alt="">
+					</a>
+					<p class="b">amenity=parking in Ivrea</p>
+				</section>
+
+				<section>
+					<h2>Overpass Turbo: risultati</h2>
+					<a class="image" href="" target="_blank">
+						<img src="images/osm_overpassturbo_results.png" style="width: 100%;" alt="">
+					</a>
+				</section>
+
+				<section>
+					<h2>Estratti</h2>
+				<ul>
+					<li><a href="http://download.geofabrik.de/" target="_blank">download.geofabrik.de</a> (daily, Mondo)</li>
+					<li><a href="http://geodati.fmach.it/gfoss_geodata/osm/italia_osm.html" target="_blank">geodati.fmach.it</a> (daily, Italia)</li>
+					<li><a href="http://osm-toolserver-italia.wmflabs.org/estratti/it/" target="_blank">WMF OSM Toolserver</a> (daily, Italia)</li>
+				</ul>
+				</section>
+
+				<section>
+					<h2>Estratti: WMF Toolserver</h2>
+					<a class="image" href="" target="_blank">
+						<img src="images/osm_extracts_toolserver.png" style="width: 100%;" alt="">
+					</a>
+				</section>
+
+				<section>
+					<h2>Usare i dati</h2>
+				<ul>
+					<li>Database</li>
+					<li>Tilemill</li>
+					<li>Programmi di grafica</li>
+				</ul>
+				</section>
+
+				<section>
+					<h2>Database</h2>
+					<p>Ovvero trasformare un estratto in un database</p>
+					<p>Ubuntu:  <code>sudo apt-get install osm2pgsql</code></p>
+					<p>Altro: vedi <a href="https://github.com/openstreetmap/osm2pgsql" target="_blank">https://github.com/openstreetmap/osm2pgsql</a></p>
+					<p>Esempio:</p>
+					<code>osm2pgsql -W --extra-attributes -d gis -S 
+  /usr/share/osm2pgsql/default.style Torino---43992.pbf</code>
+				</section>
+
+				<section>
+					<h2>Dai dati alle immagini</h2>
+				<ul>
+					<li>Raster</li>
+					<li>Vettoriale</li>
+				</ul>
+				</section>
+
+				<section>
+					<h2>Tilemill</h2>
+					<a class="image" href="" target="_blank">
+						<img src="images/osm_tilemill_osmbright.jpg" style="height: 300px;" alt="">
+					</a>
+					<ul>
+					<li>Frontend di Mapnik</li>
+					<li>Stili scritti simili a CSS (CartoCSS)</li>
+					<li>Input: CSV, GeoJSON, <b>shapefile</b>, <b>postgresql</b>, <b>spatialite</b>, KML, GeoTIFF</li>
+					<li>Output: PNG, PDF, SVG, MBTiles</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Tilemill</h2>
+					<iframe width="700" height="395" src="https://www.youtube.com/embed/u4BaCjxsa6k" frameborder="0" allowfullscreen></iframe>
+				</section>
+
+				<section>
+					<h2>Dati vettoriali</h2>
+					<p class="left">SVG ottenibile da</p>
+				<ul>
+					<li>osm.org</li>
+					<li>Qgis</li>
+					<li>Tilemill</li>
+					<li>Maperitive</li>
+				</ul>
+				<p class="left">Altri tool:</p>
+				<ul>
+					<li>osm2ai.pl (<a href="http://wiki.openstreetmap.org/wiki/Exporting_to_Adobe_Illustrator#osm2ai.pl">Wiki</a>)</li>
+					<li>Avenza Mapublisher (<a href="http://www.avenza.com/mapublisher/">Website</a>)</li>
+					<li>Indiemapper (<a href="http://indiemapper.com/app/">Website</a>)</li>
+				</ul>
+				</section>
+
+				<section>
+					<h2>Tilemill: vettoriale</h2>
+					<iframe width="700" height="395" src="https://www.youtube.com/embed/PFOqmk-vGDE" frameborder="0" allowfullscreen></iframe>
+				</section>
+				
+				<section>
+					<h2>Maperitive</h2>
+					<a class="image" href="" target="_blank">
+						<img src="images/osm_maperitive.jpg" style="height: 300px;" alt="">
+					</a>
+					<ul>
+					<li>Rendering su Windows (non opensource)</li>
+					<li>Stili nel proprio linguaggio</li>
+					<li>Dati direttamente da OSM e hillshading</li>
+					<li>Output: raster o vettoriale</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Mappe dinamiche</h2>
+				<ul>
+					<li>uMap</li>
+					<li>LeafletJS</li>
+				</ul>
+				</section>
+
+				<section>
+					<h2>uMap</h2>
+					<a class="image" href="" target="_blank">
+						<img src="images/osm_umap.jpg" style="height: 300px;" alt="">
+					</a>
+					<ul>
+					<li><a href="http://umap.openstreetmap.fr/it/" target="_blank">http://umap.openstreetmap.fr/it/</a></li>
+					<li>Creazione 'visuale' di mappe</li>
+					<li>Import dati strutturati</li>
+					<li>Embed in altri siti</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>uMap</h2>
+					<iframe width="100%" height="300px" frameBorder="0" src="https://umap.openstreetmap.fr/it/map/demo-workshop_22205?scaleControl=false&miniMap=false&scrollWheelZoom=false&zoomControl=true&allowEdit=false&moreControl=true&datalayersControl=true&onLoadPanel=undefined"></iframe><p><a href="http://umap.openstreetmap.fr/it/map/demo-workshop_22205">Visualizza a schermo intero</a></p>
+				</section>
+
+				<section>
+					<h2>Leaflet</h2>
+					<a class="image" href="" target="_blank">
+						<img src="images/osm_leaflet_dvf.png" style="height: 300px;" alt="">
+					</a>
+					<ul>
+					<li><a href="http://umap.openstreetmap.fr/it/" target="_blank">LeafletJS</a>, libreria javascript</li>
+					<li>Moltitudine di plugin</li>
+					<li>API semplice</li>
+					</ul>
+				</section>
+
+				<section>
+					<h1>Esempi di Mashup</h1>
+				</section>
+
+				<section>
+					<h2>Dati GPS</h2>
+					<a class="image" href="" target="_blank">
+						<img src="images/osm_viz_nasagps.jpg" style="height: 300px;" alt="">
+					</a>
+					<ul>
+					<li><a href="https://github.com/pviotti/osm-viz">https://github.com/pviotti/osm-viz</a></li>
+					<li>Sfondo: Nasa City Lights</li>
+					<li>Dataset: Dati GPS di OpenStreetMap (<a href="http://wiki.openstreetmap.org/wiki/Planet.gpx">Planet.gpx</a>)</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Dataset regionali</h2>
+					<a class="image" href="" target="_blank">
+						<img src="images/rischioedifici_zoom.jpg" style="height: 300px;" alt="">
+					</a>
+					<ul>
+					<li><a href="http://www.opengenova.org/emergenza2014/utilita-degli-open-data-a-genova/">www.opengenova.org/emergenza2014</a></li>
+					<li>Sfondo: OSM Cyclemap</li>
+					<li>Dataset: <a href="http://www.regione.liguria.it/opendata/dati-cartografici/item/39505-classi-di-rischio-alluvionale-ed-elementi-territoriali-esposti-direttiva-alluvioni-200760ce-e-dlgs-492010.html">Classi di rischio</a> + Edificato (Regione Liguria)</li>
+					</ul>
+				</section>
+
+				<section>
+					<h1>GRAZIE!</h1>
+				<br/>
+				<h4 style="margin-top:15px;">Alcuni link utili</h4>
+				<ul>
+					<li><a href="http://maptime.io/lessons-resources/">Maptime resources</a></li>
+					<li><a href="https://www.mapbox.com/tilemill/">Tilemill</a></li>
+					<li><a href="http://learnosm.org/it/">LearnOSM</a></li>
+				</ul>
+				</section>
+			</div>
+		</div>
+
+		<script src="reveal/lib/js/head.min.js"></script>
+		<script src="reveal/js/reveal.min.js"></script>
+
+		<script>
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+				
+				transition: 'linear', // default/cube/page/concave/zoom/linear/fade/none
+
+				dependencies: [
+					{ src: 'reveal/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'reveal/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'reveal/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+		</script>
+	</body>
+</html>
