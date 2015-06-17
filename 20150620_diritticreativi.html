@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Diritti Creativi</title>
+
+		<meta name="description" content="OpenStreetMap Workshop">
+		<meta name="author" content="Stefano Sabatini">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="reveal/css/reveal.min.css">
+		<link rel="stylesheet" href="reveal/css/theme/solarized.css" id="theme">
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="reveal/lib/css/zenburn.css">
+
+		<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+		<script>
+			if( window.location.search.match( /print-pdf/gi ) ) {
+				var link = document.createElement( 'link' );
+				link.rel = 'stylesheet';
+				link.type = 'text/css';
+				link.href = 'reveal/css/print/pdf.css';
+				document.getElementsByTagName( 'head' )[0].appendChild( link );
+			}
+		</script>
+		<!--[if lt IE 9]>
+		<script src="reveal/lib/js/html5shiv.js"></script>
+		<![endif]-->
+		<style>
+		.reveal img.inline{margin: 0 5px; border:0;}
+		.reveal .b{font-weight:bold;}
+		code{color:#B30000;}
+		.left{text-align:left;}
+		</style>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>
+					<h1>Creatività e crowdsourcing</h1>
+					<h2>Il concorso Wiki Loves Monuments ed OpenStreetMap</h2>
+					<p>
+						<small><a href="http://stefanosabatini.eu">Stefano Sabatini</a></small>
+					</p>
+				</section>
+
+				<section>
+					<h1>Wiki Loves Monuments</h1>
+					<h2>Tra Wikipedia e libertà di panorama</h2>
+				</section>
+
+				<section>
+					<h2>Cos'è Wiki Loves Monuments?</h2>
+					<img src="images/wlm.png"/>
+					<ul>
+					<li>Il più grande concorso fotografico</li>
+					<li>Organizzato dai capitoli di Wikimedia Foundation</li>
+					<li>Aumentare le foto di qualità in Wikimedia Commons</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Problemi con la legislazione</h2>
+                    <p>Foto del concorso in CC-BY-SA</p>
+					<ul>
+					<li>Codice Urbani</li>
+					<li>Decreto ArtBonus</li>
+					</ul>
+				</section>
+
+				<section>
+					<h1>OpenStreetMap</h1>
+                    <h2>Crowdsourcing geografico e diritto sui generis</h2>
+				</section>
+
+				<section>
+					<h1>GRAZIE</h1>
+				</section>
+			</div>
+		</div>
+
+		<script src="reveal/lib/js/head.min.js"></script>
+		<script src="reveal/js/reveal.min.js"></script>
+
+		<script>
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+				
+				transition: 'linear', // default/cube/page/concave/zoom/linear/fade/none
+
+				dependencies: [
+					{ src: 'reveal/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'reveal/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'reveal/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+		</script>
+	</body>
+</html>
